@@ -15,3 +15,5 @@ twitter varchar(250),
 homepage varchar(250));
 
 CREATE TABLE mpsj(mp json);
+
+CREATE TABLE ayesj(aye json);

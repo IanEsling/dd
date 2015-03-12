@@ -13,3 +13,6 @@ INSERT INTO mpsj (mp) VALUES (:mp::json);
 --name: all-mpsj
 SELECT *
 FROM mpsj
+
+--name: create-aye-j!
+INSERT INTO ayesj (aye) VALUES (:aye::json);

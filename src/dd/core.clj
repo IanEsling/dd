@@ -2,9 +2,15 @@
   (:require [dd.lda :as dd])
   (:require [dd.db :as db]))
 
-(defn save-mps []
-  (doall (map (fn [mp] (db/save-mp mp)) dd/MPs)))
+(defn save-mps [mps]
+  ;(print (str "saving mp " (first mps)))
+  (when-let [mp (first mps)]
+    ;(print "saving mp " mp)
+    (db/save-mp mp)
+    (db/save-ayes (dd/ayes (first (re-seq #"\d+$" (:_about mp)))))
+    (recur (next mps))))
 
 (defn -main
   [& args]
-  (save-mps))
+  (print "running...")
+  (save-mps dd/MPs))
