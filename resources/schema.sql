@@ -14,6 +14,8 @@ constituency varchar(250) not null,
 twitter varchar(250),
 homepage varchar(250));
 
-CREATE TABLE mpsj(mp json);
+CREATE TABLE mpsj(mp_id varchar(10), mp json);
 
-CREATE TABLE ayesj(aye json);
+CREATE TABLE ayesj(mp_id varchar(10), aye json);
+
+CREATE TABLE noesj(mp_id varchar(10), no json);

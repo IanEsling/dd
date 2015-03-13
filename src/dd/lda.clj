@@ -11,4 +11,10 @@
    (:items
        (:result
          (ch/parse-string (:body
-                            (client/get (str "http://lda.data.parliament.uk/commonsdivisions/aye.json?mnisId=" mp-id))) true))))
+                           (client/get (str "http://lda.data.parliament.uk/commonsdivisions/aye.json?mnisId=" mp-id))) true))))
+
+(defn noes [mp-id]
+   (:items
+       (:result
+         (ch/parse-string (:body
+                            (client/get (str "http://lda.data.parliament.uk/commonsdivisions/no.json?mnisId=" mp-id))) true))))
