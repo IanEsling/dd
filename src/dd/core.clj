@@ -12,4 +12,4 @@
 
 (defn -main
   [& args]
-  (save-mps dd/MPs))
+  (save-mps (dd/MPs)))

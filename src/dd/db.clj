@@ -7,7 +7,8 @@
 (def db-spec {:classname "org.postgresql.Driver"
               :subprotocol "postgresql"
               :subname "//localhost:5432/dd"
-              :user "ian"})
+              :user "postgres"
+              :password "password"})
 
 (defn- save-json-obj [save-f mp-id json]
   (save-f db-spec mp-id (ch/generate-string json)))
